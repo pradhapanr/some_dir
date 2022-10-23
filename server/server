@@ -1,0 +1,10 @@
+server {
+    listen 80;
+    root /home/azureuser/sprint-4/build;
+    index index.html;
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/home/azureuser/server/app.sock;
+    }
+}
